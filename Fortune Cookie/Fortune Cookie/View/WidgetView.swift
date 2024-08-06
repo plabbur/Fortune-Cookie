@@ -10,10 +10,13 @@ import SwiftUI
 struct WidgetView: View {
     @EnvironmentObject var dataModel: FortuneCookieModel
 
+    var expandable: Bool
     var staged: Bool
     var size: WidgetModel.SizeMode
     var color: Color = Color.darkBlue
     let gradientColor: LinearGradient = Constants.darkBlueGradient
+    var font: String = "Times New Roman"
+    
     
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
@@ -30,7 +33,7 @@ struct WidgetView: View {
                 VStack {
                     Text(dataModel.getFortune())
                         .font(
-                            Font.custom("Times New Roman", size: (staged ? 22 : 17))
+                            Font.custom(font, size: (staged ? 22 : 17))
                             .italic()
                         )
                         .foregroundColor(Color.offWhite)
@@ -46,7 +49,7 @@ struct WidgetView: View {
                 .foregroundColor(Color.offWhite)
             }
             .overlay {
-                if staged {
+                if expandable {
                     Image("Expand Icon")
                         .padding(10)
                         .frame(width: (size == WidgetModel.SizeMode.MEDIUM) ? 360 : 169, height: 169, alignment: .bottomTrailing)
@@ -56,6 +59,6 @@ struct WidgetView: View {
 }
 
 #Preview {
-    WidgetView(staged: true, size: WidgetModel.SizeMode.MEDIUM)
+    WidgetView(expandable: true, staged: true, size: WidgetModel.SizeMode.MEDIUM)
         .environmentObject(FortuneCookieModel())
 }

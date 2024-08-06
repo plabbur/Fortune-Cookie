@@ -13,6 +13,7 @@ struct Constants {
     static let offWhite: Color = Color(red: 0.93, green: 0.93, blue: 0.93)
     static let grayButtonBg: Color = Color(red: 0.23, green: 0.23, blue: 0.23)
     
+    static let fonts: [String] = ["Times New Roman", "Inter", "Georgia", "Roboto", "Helvetica"]
     
     static let menuOptionBorder: LinearGradient = LinearGradient(
         stops: [

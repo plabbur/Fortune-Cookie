@@ -9,15 +9,22 @@ import Foundation
 import SwiftUI
 
 class FortuneCookieModel: ObservableObject {
-    @Published var stagedWidget: WidgetModel = WidgetModel(size: WidgetModel.SizeMode.MEDIUM, color: Color.red)
+    
+    @Published var createWidget: Bool = false
+    @Published var viewWidget: Bool = false
+    @Published var editWidget: Bool = false
+    @Published var editingStagedWidget: Bool = true
+    @Published var widgetToView: WidgetModel = WidgetModel(size: WidgetModel.SizeMode.MEDIUM, color: .darkBlue, font: "New York Times")
+    
+    @Published var stagedWidget: WidgetModel = WidgetModel(size: WidgetModel.SizeMode.MEDIUM, color: Color.red, font: "Times New Roman")
     @Published var allWidgets: [WidgetModel] = [
-        WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.darkBlue),
-        WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.yellow),
-        WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.red),
-        WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.gray),
-        WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Color.black),
-        WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Color.green),
-        WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Color.lightPink)
+        WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.darkBlue, font: "Times New Roman"),
+        WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.yellow, font: "Helvetica"),
+        WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.red, font: "Times New Roman"),
+        WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.gray, font: "Georgia"),
+        WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Color.black, font: "Times New Roman"),
+        WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Color.green, font: "Georgia"),
+        WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Color.lightPink, font: "Helvetica")
     ]
     
     init() {
@@ -56,5 +63,10 @@ class FortuneCookieModel: ObservableObject {
     
     func addWidget(widget: WidgetModel) {
         allWidgets.append(widget)
+        stageWidget(widget: widget)
+    }
+    
+    func widgetExists(widget: WidgetModel) -> Bool {
+        return allWidgets.contains(widget)
     }
 }

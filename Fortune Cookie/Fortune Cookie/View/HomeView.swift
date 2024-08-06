@@ -33,12 +33,14 @@ struct HomeView: View {
                         .padding(.vertical)
                         
                         ScrollView {
-                            
                             Group {
                                 VStack {
-                                    dataModel.stagedWidget.displayWidget(staged: true)
-                                    
-                                    //                                WidgetView(staged: true, size: dataModel.stagedWidget.getSize(), color: dataModel.stagedWidget.getColor())
+                                    Button(action: { 
+                                        dataModel.widgetToView = dataModel.stagedWidget
+                                        dataModel.viewWidget = true
+                                    }) {
+                                        dataModel.stagedWidget.displayWidget(expandable: true, staged: true)
+                                    }
                                 }
                                 .padding(.top, 30)
                                 .padding(.bottom)
@@ -68,7 +70,10 @@ struct HomeView: View {
                                     .font(.system(size: 22))
                                     .fontWeight(.semibold)
                                 Spacer()
-                                Image("Plus Icon")
+                                
+                                Button(action: { dataModel.createWidget = true }) {
+                                    Image("Plus Icon")
+                                }
                             }
                             .padding(.horizontal, 30)
                             .padding(.bottom)
@@ -106,8 +111,14 @@ struct HomeView: View {
                     )
                 )
             }
+            .overlay {
+                dataModel.createWidget && !dataModel.viewWidget ? AnyView(CreateWidgetView()) : AnyView(EmptyView())
+                
+                dataModel.viewWidget && !dataModel.editWidget ? AnyView(ViewWidgetView(widget: dataModel.widgetToView)) : AnyView(EmptyView())
+                
+                dataModel.editWidget && !dataModel.viewWidget ? AnyView(EditWidgetView(widget: dataModel.widgetToView)) : AnyView(EmptyView())
+            }
             .frame(width: 430, height: 931)
-            
         }
     }
 }
@@ -121,13 +132,17 @@ struct UnstagedWidgetsView: View {
             ScrollViewReader { scrollView in
                 HStack(spacing: 20) {
                     ForEach(widgetList, id: \.self) { widget in
-                        widget.displayWidget(staged: false)
+                        widget.displayWidget(expandable: false, staged: false)
                             .padding(.leading, widget == widgetList[0] ? 37 : 0)
                             .padding(.trailing, widget == widgetList[widgetList.count - 1] ? 37 : 0)
                             .id(widgetList.firstIndex(of: widget))
                             .onTapGesture {
                                 dataModel.stageWidget(widget: widget)
                             }
+                            .onLongPressGesture(minimumDuration: 0.2, perform: {
+                                dataModel.widgetToView = widget
+                                dataModel.viewWidget = true
+                            })
                     }
                 }
                 .onChange(of: dataModel.stagedWidget) {

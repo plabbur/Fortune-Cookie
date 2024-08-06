@@ -14,19 +14,25 @@ class WidgetModel: Identifiable, Equatable, Hashable {
 
     var size: SizeMode
     var color: Color
+    var font: String
     
     enum SizeMode {
         case SMALL
         case MEDIUM
     }
     
-    init(size: SizeMode, color: Color) {
+    init(size: SizeMode, color: Color, font: String) {
         self.size = size
         self.color = color
+        self.font = font
     }
     
     func getName() -> String {
         return getSizeAsString().localizedCapitalized + " " + getColorAsHex(color: color).uppercased()
+    }
+    
+    func getFont() -> String {
+        return font
     }
     
     func getNameFromColor(color: Color) -> String {
@@ -71,12 +77,18 @@ class WidgetModel: Identifiable, Equatable, Hashable {
 //        return Gradient()
 //    }
     
-    func displayWidget(staged: Bool) -> WidgetView {
-        return WidgetView(staged: staged, size: size, color: color)
+    func displayWidget(expandable: Bool, staged: Bool) -> WidgetView {
+        return WidgetView(expandable: expandable, staged: staged, size: size, color: color, font: font)
+    }
+    
+    func editWidget(widget: WidgetModel) {
+        self.size = widget.size
+        self.color = widget.color
+        self.font = widget.font
     }
     
     static func == (lhs: WidgetModel, rhs: WidgetModel) -> Bool {
-        return lhs.size == rhs.size && lhs.color == rhs.color
+        return lhs.size == rhs.size && lhs.color == rhs.color && lhs.font == rhs.font
     }
     
     func hash(into hasher: inout Hasher) {

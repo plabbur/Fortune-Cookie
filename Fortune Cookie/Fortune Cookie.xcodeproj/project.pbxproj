@@ -17,6 +17,9 @@
 		E521FBDF2C5C321400A4472E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521FBDE2C5C321400A4472E /* Constants.swift */; };
 		E521FBE12C5C3B8D00A4472E /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521FBE02C5C3B8D00A4472E /* WidgetView.swift */; };
 		E55D66DA2C6194440069DA24 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D66D92C6194440069DA24 /* OptionsView.swift */; };
+		E55D66DC2C61B4A50069DA24 /* CreateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D66DB2C61B4A50069DA24 /* CreateWidgetView.swift */; };
+		E55D66E02C61EB820069DA24 /* ViewWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D66DF2C61EB820069DA24 /* ViewWidgetView.swift */; };
+		E55D66E22C61EFF80069DA24 /* EditWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D66E12C61EFF80069DA24 /* EditWidgetView.swift */; };
 		E5986E302C6078F90029362C /* SimpleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5986E2F2C6078F90029362C /* SimpleButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +35,9 @@
 		E521FBDE2C5C321400A4472E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E521FBE02C5C3B8D00A4472E /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		E55D66D92C6194440069DA24 /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		E55D66DB2C61B4A50069DA24 /* CreateWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWidgetView.swift; sourceTree = "<group>"; };
+		E55D66DF2C61EB820069DA24 /* ViewWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWidgetView.swift; sourceTree = "<group>"; };
+		E55D66E12C61EFF80069DA24 /* EditWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWidgetView.swift; sourceTree = "<group>"; };
 		E5986E2F2C6078F90029362C /* SimpleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +106,9 @@
 				E521FBE02C5C3B8D00A4472E /* WidgetView.swift */,
 				E5986E2F2C6078F90029362C /* SimpleButtonView.swift */,
 				E55D66D92C6194440069DA24 /* OptionsView.swift */,
+				E55D66DB2C61B4A50069DA24 /* CreateWidgetView.swift */,
+				E55D66DF2C61EB820069DA24 /* ViewWidgetView.swift */,
+				E55D66E12C61EFF80069DA24 /* EditWidgetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,12 +183,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E55D66E22C61EFF80069DA24 /* EditWidgetView.swift in Sources */,
+				E55D66E02C61EB820069DA24 /* ViewWidgetView.swift in Sources */,
 				E521FBCB2C5C2F3600A4472E /* ContentView.swift in Sources */,
 				E521FBDB2C5C30B100A4472E /* WidgetModel.swift in Sources */,
 				E5986E302C6078F90029362C /* SimpleButtonView.swift in Sources */,
 				E55D66DA2C6194440069DA24 /* OptionsView.swift in Sources */,
 				E521FBE12C5C3B8D00A4472E /* WidgetView.swift in Sources */,
 				E521FBD92C5C308F00A4472E /* FortuneCookieModel.swift in Sources */,
+				E55D66DC2C61B4A50069DA24 /* CreateWidgetView.swift in Sources */,
 				E521FBDD2C5C30F700A4472E /* HomeView.swift in Sources */,
 				E521FBC92C5C2F3600A4472E /* Fortune_CookieApp.swift in Sources */,
 				E521FBDF2C5C321400A4472E /* Constants.swift in Sources */,
