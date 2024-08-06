@@ -8,25 +8,19 @@
 import Foundation
 import SwiftUI
 
-class WidgetModel: Hashable {
+class WidgetModel: Identifiable, Equatable, Hashable {
     
-    var size: sizeMode
+    let id = UUID()
+
+    var size: SizeMode
     var color: Color
     
-    static func == (lhs: WidgetModel, rhs: WidgetModel) -> Bool {
-        return lhs.size == rhs.size && lhs.color == rhs.color
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(ObjectIdentifier(self))
-    }
-    
-    enum sizeMode {
+    enum SizeMode {
         case SMALL
         case MEDIUM
     }
     
-    init(size: sizeMode, color: Color) {
+    init(size: SizeMode, color: Color) {
         self.size = size
         self.color = color
     }
@@ -39,12 +33,12 @@ class WidgetModel: Hashable {
         return getSizeAsString().localizedCapitalized + " " + getColorAsHex(color: color).uppercased()
     }
     
-    func getSize() -> sizeMode {
+    func getSize() -> SizeMode {
         return size
     }
     
     func getSizeAsString() -> String {
-        if size == sizeMode.SMALL {
+        if size == SizeMode.SMALL {
             return "small"
         } else {
             return "medium"
@@ -77,7 +71,16 @@ class WidgetModel: Hashable {
 //        return Gradient()
 //    }
     
-    func displayWidget() -> WidgetView {
-        return WidgetView(staged: true, size: size)
+    func displayWidget(staged: Bool) -> WidgetView {
+        return WidgetView(staged: staged, size: size, color: color)
     }
+    
+    static func == (lhs: WidgetModel, rhs: WidgetModel) -> Bool {
+        return lhs.size == rhs.size && lhs.color == rhs.color
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
+    }
+    
 }

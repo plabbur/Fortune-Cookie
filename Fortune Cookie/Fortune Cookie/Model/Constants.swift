@@ -13,6 +13,21 @@ struct Constants {
     static let offWhite: Color = Color(red: 0.93, green: 0.93, blue: 0.93)
     static let grayButtonBg: Color = Color(red: 0.23, green: 0.23, blue: 0.23)
     
+    
+    static let menuOptionBorder: LinearGradient = LinearGradient(
+        stops: [
+            Gradient.Stop(color: Color(.menuOptionStroke), location: 0.00),
+        ], startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 1, y: 1)
+    )
+    static let premiumGradient: LinearGradient = LinearGradient(
+        stops: [
+            Gradient.Stop(color: Color(red: 1.0, green: 1.0, blue: 1.0), location: 0.00),
+            Gradient.Stop(color: Color(red: 0.192, green: 0.929, blue: 0.71), location: 0.33),
+            Gradient.Stop(color: Color(red: 0.404, green: 0.714, blue: 1.0), location: 0.66),
+            Gradient.Stop(color: Color(red: 0.298, green: 1.0, blue: 0.537), location: 0.99)
+        ], startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 1, y: 1)
+    )
+    
     static let darkBlueGradient: LinearGradient = LinearGradient(
         stops: [
             Gradient.Stop(color: Color(red: 0.847, green: 0.82, blue: 1.0), location: 0.00),

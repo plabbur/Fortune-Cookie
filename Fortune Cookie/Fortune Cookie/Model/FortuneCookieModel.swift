@@ -9,18 +9,18 @@ import Foundation
 import SwiftUI
 
 class FortuneCookieModel: ObservableObject {
-    @Published var stagedWidget: WidgetModel = WidgetModel(size: WidgetModel.sizeMode.MEDIUM, color: Color.red)
-    var allWidgets: [WidgetModel] = [
-        WidgetModel.init(size: WidgetModel.sizeMode.MEDIUM, color: Color.darkBlue),
-        WidgetModel.init(size: WidgetModel.sizeMode.MEDIUM, color: Color.yellow),
-        WidgetModel.init(size: WidgetModel.sizeMode.MEDIUM, color: Color.red),
-        WidgetModel.init(size: WidgetModel.sizeMode.MEDIUM, color: Color.gray),
-        WidgetModel.init(size: WidgetModel.sizeMode.SMALL, color: Color.black),
-        WidgetModel.init(size: WidgetModel.sizeMode.SMALL, color: Color.green),
-        WidgetModel.init(size: WidgetModel.sizeMode.SMALL, color: Color.lightPink),
+    @Published var stagedWidget: WidgetModel = WidgetModel(size: WidgetModel.SizeMode.MEDIUM, color: Color.red)
+    @Published var allWidgets: [WidgetModel] = [
+        WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.darkBlue),
+        WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.yellow),
+        WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.red),
+        WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.gray),
+        WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Color.black),
+        WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Color.green),
+        WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Color.lightPink)
     ]
     
-    init(stagedWidget: WidgetModel) {
+    init() {
         self.stagedWidget = allWidgets[0]
     }
     
@@ -34,8 +34,7 @@ class FortuneCookieModel: ObservableObject {
         
     }
     
-    func getWidgets(size: WidgetModel.sizeMode) -> [WidgetModel] {
-        
+    func getWidgets(size: WidgetModel.SizeMode) -> [WidgetModel] {
         var widgets = [WidgetModel]()
         
         allWidgets.forEach { widget in
@@ -53,5 +52,9 @@ class FortuneCookieModel: ObservableObject {
         allWidgets.insert(widget, at: 0)
         
         stagedWidget = widget
+    }
+    
+    func addWidget(widget: WidgetModel) {
+        allWidgets.append(widget)
     }
 }
