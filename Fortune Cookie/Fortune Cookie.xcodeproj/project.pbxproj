@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E5AEB84A2C76A6230097EFF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5AEB8492C76A6230097EFF9 /* Assets.xcassets */; };
 		E5AEB8922C76BCE20097EFF9 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8862C76BCE10097EFF9 /* WidgetView.swift */; };
 		E5AEB8932C76BCE20097EFF9 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8872C76BCE10097EFF9 /* OptionsView.swift */; };
 		E5AEB8942C76BCE20097EFF9 /* CreateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8882C76BCE10097EFF9 /* CreateWidgetView.swift */; };
@@ -15,24 +14,17 @@
 		E5AEB8962C76BCE20097EFF9 /* EditWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88A2C76BCE10097EFF9 /* EditWidgetView.swift */; };
 		E5AEB8972C76BCE20097EFF9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88B2C76BCE10097EFF9 /* SwiftUIView.swift */; };
 		E5AEB8982C76BCE20097EFF9 /* OverlayTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88C2C76BCE10097EFF9 /* OverlayTemplateView.swift */; };
-		E5AEB8992C76BCE20097EFF9 /* AddToHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88D2C76BCE10097EFF9 /* AddToHomeView.swift */; };
 		E5AEB89A2C76BCE20097EFF9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88E2C76BCE10097EFF9 /* HomeView.swift */; };
 		E5AEB89B2C76BCE20097EFF9 /* SimpleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88F2C76BCE10097EFF9 /* SimpleButtonView.swift */; };
 		E5AEB89C2C76BCE20097EFF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8902C76BCE10097EFF9 /* ContentView.swift */; };
 		E5AEB89D2C76BCE20097EFF9 /* ViewWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8912C76BCE20097EFF9 /* ViewWidgetView.swift */; };
 		E5AEB89F2C76BD160097EFF9 /* Fortune_CookieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB89E2C76BD160097EFF9 /* Fortune_CookieApp.swift */; };
-		E5F426952C76580400F2CA51 /* Fortune Cookie WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E5F426812C76580200F2CA51 /* Fortune Cookie WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E5AEB8A02C76BE110097EFF9 /* AddToHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88D2C76BCE10097EFF9 /* AddToHomeView.swift */; };
+		E5AEB8A32C76BFED0097EFF9 /* FortuneCookieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB87F2C76BB130097EFF9 /* FortuneCookieModel.swift */; };
+		E5AEB8A42C76BFEF0097EFF9 /* WidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8802C76BB130097EFF9 /* WidgetModel.swift */; };
+		E5AEB8A52C76BFF20097EFF9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8812C76BB130097EFF9 /* Constants.swift */; };
+		E5AEB8A82C76C11B0097EFF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5AEB8A72C76C11A0097EFF9 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E5F4269C2C765D7500F2CA51 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E521FBBD2C5C2F3600A4472E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E521FBC42C5C2F3600A4472E;
-			remoteInfo = "Fortune Cookie";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E5F426962C76580400F2CA51 /* Embed Foundation Extensions */ = {
@@ -41,7 +33,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				E5F426952C76580400F2CA51 /* Fortune Cookie WidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		E521FBC52C5C2F3600A4472E /* Fortune Cookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fortune Cookie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5AEB8492C76A6230097EFF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../files help/Assets.xcassets"; sourceTree = "<group>"; };
 		E5AEB87F2C76BB130097EFF9 /* FortuneCookieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneCookieModel.swift; sourceTree = "<group>"; };
 		E5AEB8802C76BB130097EFF9 /* WidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetModel.swift; sourceTree = "<group>"; };
 		E5AEB8812C76BB130097EFF9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -68,19 +58,12 @@
 		E5AEB8902C76BCE10097EFF9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E5AEB8912C76BCE20097EFF9 /* ViewWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWidgetView.swift; sourceTree = "<group>"; };
 		E5AEB89E2C76BD160097EFF9 /* Fortune_CookieApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fortune_CookieApp.swift; sourceTree = "<group>"; };
+		E5AEB8A72C76C11A0097EFF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5F4267C2C756F4E00F2CA51 /* Fortune-Cookie-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fortune-Cookie-Info.plist"; sourceTree = SOURCE_ROOT; };
-		E5F426812C76580200F2CA51 /* Fortune Cookie WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Fortune Cookie WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E521FBC22C5C2F3600A4472E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E5F4267E2C76580200F2CA51 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				E521FBC52C5C2F3600A4472E /* Fortune Cookie.app */,
-				E5F426812C76580200F2CA51 /* Fortune Cookie WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,10 +93,10 @@
 			isa = PBXGroup;
 			children = (
 				E5F4267C2C756F4E00F2CA51 /* Fortune-Cookie-Info.plist */,
-				E5AEB87E2C76BB130097EFF9 /* Model */,
 				E5AEB8822C76BB290097EFF9 /* View */,
+				E5AEB87E2C76BB130097EFF9 /* Model */,
 				E5AEB89E2C76BD160097EFF9 /* Fortune_CookieApp.swift */,
-				E5AEB8492C76A6230097EFF9 /* Assets.xcassets */,
+				E5AEB8A72C76C11A0097EFF9 /* Assets.xcassets */,
 			);
 			path = "Fortune Cookie";
 			sourceTree = "<group>";
@@ -122,9 +104,9 @@
 		E5AEB87E2C76BB130097EFF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E5AEB8812C76BB130097EFF9 /* Constants.swift */,
 				E5AEB87F2C76BB130097EFF9 /* FortuneCookieModel.swift */,
 				E5AEB8802C76BB130097EFF9 /* WidgetModel.swift */,
+				E5AEB8812C76BB130097EFF9 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,24 +152,6 @@
 			productReference = E521FBC52C5C2F3600A4472E /* Fortune Cookie.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E5F426802C76580200F2CA51 /* Fortune Cookie WidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E5F426992C76580400F2CA51 /* Build configuration list for PBXNativeTarget "Fortune Cookie WidgetExtension" */;
-			buildPhases = (
-				E5F4267D2C76580200F2CA51 /* Sources */,
-				E5F4267E2C76580200F2CA51 /* Frameworks */,
-				E5F4267F2C76580200F2CA51 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E5F4269D2C765D7500F2CA51 /* PBXTargetDependency */,
-			);
-			name = "Fortune Cookie WidgetExtension";
-			productName = "Fortune Cookie WidgetExtension";
-			productReference = E5F426812C76580200F2CA51 /* Fortune Cookie WidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -201,9 +165,6 @@
 					E521FBC42C5C2F3600A4472E = {
 						CreatedOnToolsVersion = 15.3;
 						LastSwiftMigration = 1530;
-					};
-					E5F426802C76580200F2CA51 = {
-						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
@@ -221,7 +182,6 @@
 			projectRoot = "";
 			targets = (
 				E521FBC42C5C2F3600A4472E /* Fortune Cookie */,
-				E5F426802C76580200F2CA51 /* Fortune Cookie WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -231,14 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5AEB84A2C76A6230097EFF9 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E5F4267F2C76580200F2CA51 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				E5AEB8A82C76C11B0097EFF9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,32 +208,20 @@
 				E5AEB89A2C76BCE20097EFF9 /* HomeView.swift in Sources */,
 				E5AEB8922C76BCE20097EFF9 /* WidgetView.swift in Sources */,
 				E5AEB8932C76BCE20097EFF9 /* OptionsView.swift in Sources */,
+				E5AEB8A02C76BE110097EFF9 /* AddToHomeView.swift in Sources */,
+				E5AEB8A52C76BFF20097EFF9 /* Constants.swift in Sources */,
 				E5AEB89D2C76BCE20097EFF9 /* ViewWidgetView.swift in Sources */,
 				E5AEB8982C76BCE20097EFF9 /* OverlayTemplateView.swift in Sources */,
 				E5AEB8972C76BCE20097EFF9 /* SwiftUIView.swift in Sources */,
 				E5AEB8952C76BCE20097EFF9 /* PremiumView.swift in Sources */,
 				E5AEB8962C76BCE20097EFF9 /* EditWidgetView.swift in Sources */,
-				E5AEB8992C76BCE20097EFF9 /* AddToHomeView.swift in Sources */,
+				E5AEB8A42C76BFEF0097EFF9 /* WidgetModel.swift in Sources */,
 				E5AEB8942C76BCE20097EFF9 /* CreateWidgetView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E5F4267D2C76580200F2CA51 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				E5AEB8A32C76BFED0097EFF9 /* FortuneCookieModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E5F4269D2C765D7500F2CA51 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E521FBC42C5C2F3600A4472E /* Fortune Cookie */;
-			targetProxy = E5F4269C2C765D7500F2CA51 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E521FBD12C5C2F3900A4472E /* Debug */ = {
@@ -410,7 +351,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Fortune Cookie/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Fortune Cookie/Assets\"";
 				DEVELOPMENT_TEAM = P4ALVZR99N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -443,7 +384,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Fortune Cookie/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Fortune Cookie/Assets\"";
 				DEVELOPMENT_TEAM = P4ALVZR99N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -467,60 +408,6 @@
 			};
 			name = Release;
 		};
-		E5F426972C76580400F2CA51 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P4ALVZR99N;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Fortune Cookie Widget/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Fortune Cookie Widget";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.coleabrams.Fortune-Cookie.Fortune-Cookie-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		E5F426982C76580400F2CA51 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P4ALVZR99N;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Fortune Cookie Widget/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Fortune Cookie Widget";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.coleabrams.Fortune-Cookie.Fortune-Cookie-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -538,15 +425,6 @@
 			buildConfigurations = (
 				E521FBD42C5C2F3900A4472E /* Debug */,
 				E521FBD52C5C2F3900A4472E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E5F426992C76580400F2CA51 /* Build configuration list for PBXNativeTarget "Fortune Cookie WidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E5F426972C76580400F2CA51 /* Debug */,
-				E5F426982C76580400F2CA51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
