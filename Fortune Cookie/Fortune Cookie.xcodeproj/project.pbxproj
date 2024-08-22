@@ -7,34 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E5AEB8282C76A5830097EFF9 /* AddToHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8272C76A5820097EFF9 /* AddToHomeView.swift */; };
-		E5AEB8342C76A5AC0097EFF9 /* CreateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8292C76A5AC0097EFF9 /* CreateWidgetView.swift */; };
-		E5AEB8362C76A5AC0097EFF9 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB82B2C76A5AC0097EFF9 /* OptionsView.swift */; };
-		E5AEB8372C76A5AC0097EFF9 /* OverlayTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB82C2C76A5AC0097EFF9 /* OverlayTemplateView.swift */; };
-		E5AEB8382C76A5AC0097EFF9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB82D2C76A5AC0097EFF9 /* SwiftUIView.swift */; };
-		E5AEB8392C76A5AC0097EFF9 /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB82E2C76A5AC0097EFF9 /* PremiumView.swift */; };
-		E5AEB83A2C76A5AC0097EFF9 /* SimpleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB82F2C76A5AC0097EFF9 /* SimpleButtonView.swift */; };
-		E5AEB83B2C76A5AC0097EFF9 /* ViewWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8302C76A5AC0097EFF9 /* ViewWidgetView.swift */; };
-		E5AEB83C2C76A5AC0097EFF9 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8312C76A5AC0097EFF9 /* WidgetView.swift */; };
-		E5AEB83D2C76A5AC0097EFF9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8322C76A5AC0097EFF9 /* HomeView.swift */; };
-		E5AEB83E2C76A5AC0097EFF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8332C76A5AC0097EFF9 /* ContentView.swift */; };
-		E5AEB8402C76A5DF0097EFF9 /* EditWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB83F2C76A5DF0097EFF9 /* EditWidgetView.swift */; };
-		E5AEB8442C76A60D0097EFF9 /* WidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8412C76A60D0097EFF9 /* WidgetModel.swift */; };
-		E5AEB8452C76A60D0097EFF9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8422C76A60D0097EFF9 /* Constants.swift */; };
-		E5AEB8462C76A60D0097EFF9 /* FortuneCookieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8432C76A60D0097EFF9 /* FortuneCookieModel.swift */; };
-		E5AEB8482C76A6190097EFF9 /* Fortune_CookieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8472C76A6190097EFF9 /* Fortune_CookieApp.swift */; };
 		E5AEB84A2C76A6230097EFF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5AEB8492C76A6230097EFF9 /* Assets.xcassets */; };
-		E5AEB84C2C76A63E0097EFF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5AEB84B2C76A63E0097EFF9 /* Preview Assets.xcassets */; };
-		E5F426842C76580200F2CA51 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F426832C76580200F2CA51 /* WidgetKit.framework */; };
-		E5F426862C76580200F2CA51 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F426852C76580200F2CA51 /* SwiftUI.framework */; };
-		E5F426892C76580200F2CA51 /* Fortune_Cookie_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F426882C76580200F2CA51 /* Fortune_Cookie_WidgetBundle.swift */; };
-		E5F4268B2C76580200F2CA51 /* Fortune_Cookie_WidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F4268A2C76580200F2CA51 /* Fortune_Cookie_WidgetLiveActivity.swift */; };
-		E5F4268D2C76580200F2CA51 /* Fortune_Cookie_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F4268C2C76580200F2CA51 /* Fortune_Cookie_Widget.swift */; };
-		E5F4268F2C76580200F2CA51 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F4268E2C76580200F2CA51 /* AppIntent.swift */; };
-		E5F426912C76580400F2CA51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5F426902C76580400F2CA51 /* Assets.xcassets */; };
+		E5AEB8922C76BCE20097EFF9 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8862C76BCE10097EFF9 /* WidgetView.swift */; };
+		E5AEB8932C76BCE20097EFF9 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8872C76BCE10097EFF9 /* OptionsView.swift */; };
+		E5AEB8942C76BCE20097EFF9 /* CreateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8882C76BCE10097EFF9 /* CreateWidgetView.swift */; };
+		E5AEB8952C76BCE20097EFF9 /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8892C76BCE10097EFF9 /* PremiumView.swift */; };
+		E5AEB8962C76BCE20097EFF9 /* EditWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88A2C76BCE10097EFF9 /* EditWidgetView.swift */; };
+		E5AEB8972C76BCE20097EFF9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88B2C76BCE10097EFF9 /* SwiftUIView.swift */; };
+		E5AEB8982C76BCE20097EFF9 /* OverlayTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88C2C76BCE10097EFF9 /* OverlayTemplateView.swift */; };
+		E5AEB8992C76BCE20097EFF9 /* AddToHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88D2C76BCE10097EFF9 /* AddToHomeView.swift */; };
+		E5AEB89A2C76BCE20097EFF9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88E2C76BCE10097EFF9 /* HomeView.swift */; };
+		E5AEB89B2C76BCE20097EFF9 /* SimpleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB88F2C76BCE10097EFF9 /* SimpleButtonView.swift */; };
+		E5AEB89C2C76BCE20097EFF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8902C76BCE10097EFF9 /* ContentView.swift */; };
+		E5AEB89D2C76BCE20097EFF9 /* ViewWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8912C76BCE20097EFF9 /* ViewWidgetView.swift */; };
+		E5AEB89F2C76BD160097EFF9 /* Fortune_CookieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB89E2C76BD160097EFF9 /* Fortune_CookieApp.swift */; };
 		E5F426952C76580400F2CA51 /* Fortune Cookie WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E5F426812C76580200F2CA51 /* Fortune Cookie WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E5F4269A2C765B5E00F2CA51 /* Fortune_Cookie_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F4268C2C76580200F2CA51 /* Fortune_Cookie_Widget.swift */; };
-		E5F4269B2C765BA900F2CA51 /* Fortune_Cookie_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F426882C76580200F2CA51 /* Fortune_Cookie_WidgetBundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,51 +50,26 @@
 
 /* Begin PBXFileReference section */
 		E521FBC52C5C2F3600A4472E /* Fortune Cookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fortune Cookie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5AEB7FD2C76A3260097EFF9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E5AEB7FE2C76A3260097EFF9 /* FortuneCookieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneCookieModel.swift; sourceTree = "<group>"; };
-		E5AEB7FF2C76A3260097EFF9 /* WidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetModel.swift; sourceTree = "<group>"; };
-		E5AEB8012C76A3260097EFF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E5AEB8032C76A3260097EFF9 /* AddToHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToHomeView.swift; sourceTree = "<group>"; };
-		E5AEB8042C76A3260097EFF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E5AEB8052C76A3260097EFF9 /* CreateWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWidgetView.swift; sourceTree = "<group>"; };
-		E5AEB8062C76A3260097EFF9 /* EditWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWidgetView.swift; sourceTree = "<group>"; };
-		E5AEB8072C76A3260097EFF9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E5AEB8082C76A3260097EFF9 /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
-		E5AEB8092C76A3260097EFF9 /* OverlayTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayTemplateView.swift; sourceTree = "<group>"; };
-		E5AEB80A2C76A3260097EFF9 /* PremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
-		E5AEB80B2C76A3260097EFF9 /* SimpleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButtonView.swift; sourceTree = "<group>"; };
-		E5AEB80C2C76A3260097EFF9 /* ViewWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWidgetView.swift; sourceTree = "<group>"; };
-		E5AEB80D2C76A3260097EFF9 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
-		E5AEB80F2C76A3260097EFF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E5AEB8102C76A3260097EFF9 /* Fortune_CookieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortune_CookieApp.swift; sourceTree = "<group>"; };
-		E5AEB8272C76A5820097EFF9 /* AddToHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddToHomeView.swift; path = "../../../../../../files help/AddToHomeView.swift"; sourceTree = "<group>"; };
-		E5AEB8292C76A5AC0097EFF9 /* CreateWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateWidgetView.swift; path = "../../../../../../files help/CreateWidgetView.swift"; sourceTree = "<group>"; };
-		E5AEB82B2C76A5AC0097EFF9 /* OptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsView.swift; path = "../../../../../../files help/OptionsView.swift"; sourceTree = "<group>"; };
-		E5AEB82C2C76A5AC0097EFF9 /* OverlayTemplateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverlayTemplateView.swift; path = "../../../../../../files help/OverlayTemplateView.swift"; sourceTree = "<group>"; };
-		E5AEB82D2C76A5AC0097EFF9 /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftUIView.swift; path = "../../../../../../files help/SwiftUIView.swift"; sourceTree = "<group>"; };
-		E5AEB82E2C76A5AC0097EFF9 /* PremiumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PremiumView.swift; path = "../../../../../../files help/PremiumView.swift"; sourceTree = "<group>"; };
-		E5AEB82F2C76A5AC0097EFF9 /* SimpleButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleButtonView.swift; path = "../../../../../../files help/SimpleButtonView.swift"; sourceTree = "<group>"; };
-		E5AEB8302C76A5AC0097EFF9 /* ViewWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewWidgetView.swift; path = "../../../../../../files help/ViewWidgetView.swift"; sourceTree = "<group>"; };
-		E5AEB8312C76A5AC0097EFF9 /* WidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetView.swift; path = "../../../../../../files help/WidgetView.swift"; sourceTree = "<group>"; };
-		E5AEB8322C76A5AC0097EFF9 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = "../../../../../../files help/HomeView.swift"; sourceTree = "<group>"; };
-		E5AEB8332C76A5AC0097EFF9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../../../../files help/ContentView.swift"; sourceTree = "<group>"; };
-		E5AEB83F2C76A5DF0097EFF9 /* EditWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditWidgetView.swift; path = "../../../../../../files help/EditWidgetView.swift"; sourceTree = "<group>"; };
-		E5AEB8412C76A60D0097EFF9 /* WidgetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetModel.swift; path = "../../../../../../files help/WidgetModel.swift"; sourceTree = "<group>"; };
-		E5AEB8422C76A60D0097EFF9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "../../../../../../files help/Constants.swift"; sourceTree = "<group>"; };
-		E5AEB8432C76A60D0097EFF9 /* FortuneCookieModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FortuneCookieModel.swift; path = "../../../../../../files help/FortuneCookieModel.swift"; sourceTree = "<group>"; };
-		E5AEB8472C76A6190097EFF9 /* Fortune_CookieApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fortune_CookieApp.swift; path = "../../../../../files help/Fortune_CookieApp.swift"; sourceTree = "<group>"; };
 		E5AEB8492C76A6230097EFF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../files help/Assets.xcassets"; sourceTree = "<group>"; };
-		E5AEB84B2C76A63E0097EFF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Preview Assets.xcassets"; path = "../../../../../../files help/Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E5AEB87F2C76BB130097EFF9 /* FortuneCookieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneCookieModel.swift; sourceTree = "<group>"; };
+		E5AEB8802C76BB130097EFF9 /* WidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetModel.swift; sourceTree = "<group>"; };
+		E5AEB8812C76BB130097EFF9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E5AEB8852C76BCE10097EFF9 /* Fortune Cookie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fortune Cookie-Bridging-Header.h"; sourceTree = "<group>"; };
+		E5AEB8862C76BCE10097EFF9 /* WidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		E5AEB8872C76BCE10097EFF9 /* OptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		E5AEB8882C76BCE10097EFF9 /* CreateWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWidgetView.swift; sourceTree = "<group>"; };
+		E5AEB8892C76BCE10097EFF9 /* PremiumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
+		E5AEB88A2C76BCE10097EFF9 /* EditWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditWidgetView.swift; sourceTree = "<group>"; };
+		E5AEB88B2C76BCE10097EFF9 /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		E5AEB88C2C76BCE10097EFF9 /* OverlayTemplateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayTemplateView.swift; sourceTree = "<group>"; };
+		E5AEB88D2C76BCE10097EFF9 /* AddToHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToHomeView.swift; sourceTree = "<group>"; };
+		E5AEB88E2C76BCE10097EFF9 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E5AEB88F2C76BCE10097EFF9 /* SimpleButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleButtonView.swift; sourceTree = "<group>"; };
+		E5AEB8902C76BCE10097EFF9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E5AEB8912C76BCE20097EFF9 /* ViewWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWidgetView.swift; sourceTree = "<group>"; };
+		E5AEB89E2C76BD160097EFF9 /* Fortune_CookieApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fortune_CookieApp.swift; sourceTree = "<group>"; };
 		E5F4267C2C756F4E00F2CA51 /* Fortune-Cookie-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fortune-Cookie-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E5F426812C76580200F2CA51 /* Fortune Cookie WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Fortune Cookie WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5F426832C76580200F2CA51 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		E5F426852C76580200F2CA51 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		E5F426882C76580200F2CA51 /* Fortune_Cookie_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortune_Cookie_WidgetBundle.swift; sourceTree = "<group>"; };
-		E5F4268A2C76580200F2CA51 /* Fortune_Cookie_WidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortune_Cookie_WidgetLiveActivity.swift; sourceTree = "<group>"; };
-		E5F4268C2C76580200F2CA51 /* Fortune_Cookie_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortune_Cookie_Widget.swift; sourceTree = "<group>"; };
-		E5F4268E2C76580200F2CA51 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
-		E5F426902C76580400F2CA51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E5F426922C76580400F2CA51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5F426862C76580200F2CA51 /* SwiftUI.framework in Frameworks */,
-				E5F426842C76580200F2CA51 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				E521FBC72C5C2F3600A4472E /* Fortune Cookie */,
-				E5F426872C76580200F2CA51 /* Fortune Cookie Widget */,
-				E5F426822C76580200F2CA51 /* Frameworks */,
 				E521FBC62C5C2F3600A4472E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,121 +111,42 @@
 			isa = PBXGroup;
 			children = (
 				E5F4267C2C756F4E00F2CA51 /* Fortune-Cookie-Info.plist */,
-				E521FBD72C5C306900A4472E /* View */,
-				E521FBD62C5C306200A4472E /* Model */,
-				E5AEB8472C76A6190097EFF9 /* Fortune_CookieApp.swift */,
+				E5AEB87E2C76BB130097EFF9 /* Model */,
+				E5AEB8822C76BB290097EFF9 /* View */,
+				E5AEB89E2C76BD160097EFF9 /* Fortune_CookieApp.swift */,
 				E5AEB8492C76A6230097EFF9 /* Assets.xcassets */,
-				E521FBCE2C5C2F3900A4472E /* Preview Content */,
 			);
 			path = "Fortune Cookie";
 			sourceTree = "<group>";
 		};
-		E521FBCE2C5C2F3900A4472E /* Preview Content */ = {
+		E5AEB87E2C76BB130097EFF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E5AEB84B2C76A63E0097EFF9 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		E521FBD62C5C306200A4472E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E5AEB8422C76A60D0097EFF9 /* Constants.swift */,
-				E5AEB8432C76A60D0097EFF9 /* FortuneCookieModel.swift */,
-				E5AEB8412C76A60D0097EFF9 /* WidgetModel.swift */,
+				E5AEB8812C76BB130097EFF9 /* Constants.swift */,
+				E5AEB87F2C76BB130097EFF9 /* FortuneCookieModel.swift */,
+				E5AEB8802C76BB130097EFF9 /* WidgetModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E521FBD72C5C306900A4472E /* View */ = {
+		E5AEB8822C76BB290097EFF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E5AEB8322C76A5AC0097EFF9 /* HomeView.swift */,
-				E5AEB8332C76A5AC0097EFF9 /* ContentView.swift */,
-				E5AEB8292C76A5AC0097EFF9 /* CreateWidgetView.swift */,
-				E5AEB83F2C76A5DF0097EFF9 /* EditWidgetView.swift */,
-				E5AEB82B2C76A5AC0097EFF9 /* OptionsView.swift */,
-				E5AEB82C2C76A5AC0097EFF9 /* OverlayTemplateView.swift */,
-				E5AEB82E2C76A5AC0097EFF9 /* PremiumView.swift */,
-				E5AEB82F2C76A5AC0097EFF9 /* SimpleButtonView.swift */,
-				E5AEB82D2C76A5AC0097EFF9 /* SwiftUIView.swift */,
-				E5AEB8302C76A5AC0097EFF9 /* ViewWidgetView.swift */,
-				E5AEB8312C76A5AC0097EFF9 /* WidgetView.swift */,
-				E5AEB8272C76A5820097EFF9 /* AddToHomeView.swift */,
+				E5AEB88D2C76BCE10097EFF9 /* AddToHomeView.swift */,
+				E5AEB8902C76BCE10097EFF9 /* ContentView.swift */,
+				E5AEB8882C76BCE10097EFF9 /* CreateWidgetView.swift */,
+				E5AEB88A2C76BCE10097EFF9 /* EditWidgetView.swift */,
+				E5AEB88E2C76BCE10097EFF9 /* HomeView.swift */,
+				E5AEB8872C76BCE10097EFF9 /* OptionsView.swift */,
+				E5AEB88C2C76BCE10097EFF9 /* OverlayTemplateView.swift */,
+				E5AEB8892C76BCE10097EFF9 /* PremiumView.swift */,
+				E5AEB88F2C76BCE10097EFF9 /* SimpleButtonView.swift */,
+				E5AEB88B2C76BCE10097EFF9 /* SwiftUIView.swift */,
+				E5AEB8912C76BCE20097EFF9 /* ViewWidgetView.swift */,
+				E5AEB8862C76BCE10097EFF9 /* WidgetView.swift */,
+				E5AEB8852C76BCE10097EFF9 /* Fortune Cookie-Bridging-Header.h */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		E5AEB8002C76A3260097EFF9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E5AEB7FD2C76A3260097EFF9 /* Constants.swift */,
-				E5AEB7FE2C76A3260097EFF9 /* FortuneCookieModel.swift */,
-				E5AEB7FF2C76A3260097EFF9 /* WidgetModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		E5AEB8022C76A3260097EFF9 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				E5AEB8012C76A3260097EFF9 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		E5AEB80E2C76A3260097EFF9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E5AEB8032C76A3260097EFF9 /* AddToHomeView.swift */,
-				E5AEB8042C76A3260097EFF9 /* ContentView.swift */,
-				E5AEB8052C76A3260097EFF9 /* CreateWidgetView.swift */,
-				E5AEB8062C76A3260097EFF9 /* EditWidgetView.swift */,
-				E5AEB8072C76A3260097EFF9 /* HomeView.swift */,
-				E5AEB8082C76A3260097EFF9 /* OptionsView.swift */,
-				E5AEB8092C76A3260097EFF9 /* OverlayTemplateView.swift */,
-				E5AEB80A2C76A3260097EFF9 /* PremiumView.swift */,
-				E5AEB80B2C76A3260097EFF9 /* SimpleButtonView.swift */,
-				E5AEB80C2C76A3260097EFF9 /* ViewWidgetView.swift */,
-				E5AEB80D2C76A3260097EFF9 /* WidgetView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		E5AEB8112C76A3260097EFF9 /* Fortune Cookie */ = {
-			isa = PBXGroup;
-			children = (
-				E5AEB8002C76A3260097EFF9 /* Model */,
-				E5AEB8022C76A3260097EFF9 /* Preview Content */,
-				E5AEB80E2C76A3260097EFF9 /* View */,
-				E5AEB80F2C76A3260097EFF9 /* Assets.xcassets */,
-				E5AEB8102C76A3260097EFF9 /* Fortune_CookieApp.swift */,
-			);
-			path = "Fortune Cookie";
-			sourceTree = "<group>";
-		};
-		E5F426822C76580200F2CA51 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E5AEB8112C76A3260097EFF9 /* Fortune Cookie */,
-				E5F426832C76580200F2CA51 /* WidgetKit.framework */,
-				E5F426852C76580200F2CA51 /* SwiftUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E5F426872C76580200F2CA51 /* Fortune Cookie Widget */ = {
-			isa = PBXGroup;
-			children = (
-				E5F426882C76580200F2CA51 /* Fortune_Cookie_WidgetBundle.swift */,
-				E5F4268A2C76580200F2CA51 /* Fortune_Cookie_WidgetLiveActivity.swift */,
-				E5F4268C2C76580200F2CA51 /* Fortune_Cookie_Widget.swift */,
-				E5F4268E2C76580200F2CA51 /* AppIntent.swift */,
-				E5F426902C76580400F2CA51 /* Assets.xcassets */,
-				E5F426922C76580400F2CA51 /* Info.plist */,
-			);
-			path = "Fortune Cookie Widget";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +200,7 @@
 				TargetAttributes = {
 					E521FBC42C5C2F3600A4472E = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 					};
 					E5F426802C76580200F2CA51 = {
 						CreatedOnToolsVersion = 15.3;
@@ -351,7 +231,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5AEB84C2C76A63E0097EFF9 /* Preview Assets.xcassets in Resources */,
 				E5AEB84A2C76A6230097EFF9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,7 +239,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5F426912C76580400F2CA51 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,24 +249,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5AEB83D2C76A5AC0097EFF9 /* HomeView.swift in Sources */,
-				E5AEB83E2C76A5AC0097EFF9 /* ContentView.swift in Sources */,
-				E5AEB8382C76A5AC0097EFF9 /* SwiftUIView.swift in Sources */,
-				E5AEB8362C76A5AC0097EFF9 /* OptionsView.swift in Sources */,
-				E5F4269A2C765B5E00F2CA51 /* Fortune_Cookie_Widget.swift in Sources */,
-				E5AEB83A2C76A5AC0097EFF9 /* SimpleButtonView.swift in Sources */,
-				E5AEB83C2C76A5AC0097EFF9 /* WidgetView.swift in Sources */,
-				E5AEB8342C76A5AC0097EFF9 /* CreateWidgetView.swift in Sources */,
-				E5AEB8282C76A5830097EFF9 /* AddToHomeView.swift in Sources */,
-				E5AEB8372C76A5AC0097EFF9 /* OverlayTemplateView.swift in Sources */,
-				E5AEB8482C76A6190097EFF9 /* Fortune_CookieApp.swift in Sources */,
-				E5AEB8442C76A60D0097EFF9 /* WidgetModel.swift in Sources */,
-				E5AEB8462C76A60D0097EFF9 /* FortuneCookieModel.swift in Sources */,
-				E5AEB8392C76A5AC0097EFF9 /* PremiumView.swift in Sources */,
-				E5AEB8402C76A5DF0097EFF9 /* EditWidgetView.swift in Sources */,
-				E5AEB8452C76A60D0097EFF9 /* Constants.swift in Sources */,
-				E5F4269B2C765BA900F2CA51 /* Fortune_Cookie_WidgetBundle.swift in Sources */,
-				E5AEB83B2C76A5AC0097EFF9 /* ViewWidgetView.swift in Sources */,
+				E5AEB89B2C76BCE20097EFF9 /* SimpleButtonView.swift in Sources */,
+				E5AEB89C2C76BCE20097EFF9 /* ContentView.swift in Sources */,
+				E5AEB89F2C76BD160097EFF9 /* Fortune_CookieApp.swift in Sources */,
+				E5AEB89A2C76BCE20097EFF9 /* HomeView.swift in Sources */,
+				E5AEB8922C76BCE20097EFF9 /* WidgetView.swift in Sources */,
+				E5AEB8932C76BCE20097EFF9 /* OptionsView.swift in Sources */,
+				E5AEB89D2C76BCE20097EFF9 /* ViewWidgetView.swift in Sources */,
+				E5AEB8982C76BCE20097EFF9 /* OverlayTemplateView.swift in Sources */,
+				E5AEB8972C76BCE20097EFF9 /* SwiftUIView.swift in Sources */,
+				E5AEB8952C76BCE20097EFF9 /* PremiumView.swift in Sources */,
+				E5AEB8962C76BCE20097EFF9 /* EditWidgetView.swift in Sources */,
+				E5AEB8992C76BCE20097EFF9 /* AddToHomeView.swift in Sources */,
+				E5AEB8942C76BCE20097EFF9 /* CreateWidgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,10 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5F4268B2C76580200F2CA51 /* Fortune_Cookie_WidgetLiveActivity.swift in Sources */,
-				E5F4268F2C76580200F2CA51 /* AppIntent.swift in Sources */,
-				E5F4268D2C76580200F2CA51 /* Fortune_Cookie_Widget.swift in Sources */,
-				E5F426892C76580200F2CA51 /* Fortune_Cookie_WidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,9 +405,9 @@
 		E521FBD42C5C2F3900A4472E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Fortune Cookie/Preview Content\"";
@@ -559,6 +428,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coleabrams.Fortune-Cookie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Fortune Cookie/View/Fortune Cookie-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -567,9 +438,9 @@
 		E521FBD52C5C2F3900A4472E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Fortune Cookie/Preview Content\"";
@@ -590,6 +461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coleabrams.Fortune-Cookie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Fortune Cookie/View/Fortune Cookie-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
