@@ -29,6 +29,16 @@ struct Constants {
         ], startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 1, y: 1)
     )
     
+    
+    static let darkBlueGradientTwo: LinearGradient = LinearGradient(
+        stops: [
+            Gradient.Stop(color: Color(.darkBlue), location: 0.00),
+        Gradient.Stop(color: Color(.darkBlueGradientEnd), location: 1.00),
+    ],
+    startPoint: UnitPoint(x: 0, y: 0),
+    endPoint: UnitPoint(x: 1, y: 1)
+    )
+    
     static let darkBlueGradient: LinearGradient = LinearGradient(
         stops: [
             Gradient.Stop(color: Color(red: 0.847, green: 0.82, blue: 1.0), location: 0.00),

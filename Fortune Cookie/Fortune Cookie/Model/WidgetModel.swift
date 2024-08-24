@@ -90,6 +90,7 @@ public class WidgetModel: Identifiable, Equatable, Hashable {
         self.size = widget.size
         self.color = widget.color
         self.font = widget.font
+        
     }
     
     public static func == (lhs: WidgetModel, rhs: WidgetModel) -> Bool {

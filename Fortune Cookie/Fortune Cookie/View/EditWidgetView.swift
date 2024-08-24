@@ -20,7 +20,6 @@ struct EditWidgetView: View {
 }
 
 struct EditWidgetContentView: View {
-    
     @State var yOffset: Double = 900
     @State var opacityOffset: Double = 0
     @State var widgetErrorOpacity = 0.0
@@ -70,6 +69,7 @@ struct EditWidgetContentView: View {
                             }
                         } else {
                             widget.editWidget(widget: WidgetModel(size: selectedSize, color: selectedColor, font: selectedFont))
+                            dataModel.updateDefaults()
 //                                dataModel.addWidget(widget: WidgetModel(size: selectedSize, color: selectedColor, font: selectedFont))
                             dataModel.currentOverlay = .NONE
                         }

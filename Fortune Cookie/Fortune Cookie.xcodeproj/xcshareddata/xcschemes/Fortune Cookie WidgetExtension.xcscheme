@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E5F426802C76580200F2CA51"
+               BlueprintIdentifier = "E5AEB8EE2C76DC210097EFF9"
                BuildableName = "Fortune Cookie WidgetExtension.appex"
                BlueprintName = "Fortune Cookie WidgetExtension"
                ReferencedContainer = "container:Fortune Cookie.xcodeproj">
@@ -71,7 +71,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E5F426802C76580200F2CA51"
+            BlueprintIdentifier = "E5AEB8EE2C76DC210097EFF9"
             BuildableName = "Fortune Cookie WidgetExtension.appex"
             BlueprintName = "Fortune Cookie WidgetExtension"
             ReferencedContainer = "container:Fortune Cookie.xcodeproj">

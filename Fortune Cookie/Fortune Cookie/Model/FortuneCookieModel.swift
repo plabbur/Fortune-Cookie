@@ -7,6 +7,9 @@
 
 import Foundation
 import SwiftUI
+import UIKit
+import Combine
+import WidgetKit
 
 struct OpenAIRequest: Codable {
     let model: String
@@ -33,7 +36,6 @@ class FortuneCookieModel: ObservableObject {
     
     @Published var stagedWidget: WidgetModel
     @Published var allWidgets: [WidgetModel]
-    
     @Published var currentOverlay: Overlay
     
     private var fortunesUsed: [String] = [String]()
@@ -41,8 +43,9 @@ class FortuneCookieModel: ObservableObject {
     @Published var currentFortune: String = "Fortune will soon find you, just wait"
     var nextFortune: String = "Your dreams are closer than you think."
     @Published var unstagedFortune: String = "Fortune will soon find you, just wait"
+    
 
-
+    let sharedDefaults = UserDefaults(suiteName: "group.com.coleabrams.Fortune-Cookie")
     
     enum Overlay {
         case VIEW_WIDGET
@@ -89,6 +92,7 @@ class FortuneCookieModel: ObservableObject {
         allWidgets.insert(widget, at: 0)
         
         stagedWidget = widget
+        updateDefaults()
     }
     
     func addWidget(widget: WidgetModel) {
@@ -121,13 +125,15 @@ class FortuneCookieModel: ObservableObject {
             DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                 withAnimation(.easeIn(duration: 0.5)) {
                     self.addCharToFortune(char: String(character))
-
                     if index == fortuneAsList.count - 1 {
+                        self.updateDefaults()
                         completion()
                     }
                 }
             }
         }
+        
+
     }
     
     func getNextFortune() -> String {
@@ -156,6 +162,7 @@ class FortuneCookieModel: ObservableObject {
             self.setUnstagedFortune()
         }
         fortunesUsed.append(currentFortune)
+        
         
         let prompt: String = "Generate a fortune cookie fortune that is less than 10 words and is not similar to these (don't add exclamation marks): " + fortunesUsed.map { "'\($0)'" }.joined(separator: ", ")
         
@@ -231,5 +238,21 @@ class FortuneCookieModel: ObservableObject {
         }
         
         task.resume()
+    }
+    
+    func updateDefaults() {
+        let sharedDefaults = UserDefaults(suiteName: "group.com.coleabrams.Fortune-Cookie")
+        
+        if let colorData = try? NSKeyedArchiver.archivedData(withRootObject: UIColor(stagedWidget.color), requiringSecureCoding: false) {
+            sharedDefaults?.set(colorData, forKey: "WidgetColor")
+        }
+        
+        sharedDefaults?.set(self.currentFortune, forKey: "WidgetFortune")
+        print("Saved Fortune: \(self.currentFortune)")
+        
+        sharedDefaults?.set(stagedWidget.getFont(), forKey: "WidgetFont")
+        sharedDefaults?.set(stagedWidget.getSizeAsString(), forKey: "WidgetSize")
+        
+        WidgetCenter.shared.reloadTimelines(ofKind: "Fortune_Cookie_Widget")
     }
 }

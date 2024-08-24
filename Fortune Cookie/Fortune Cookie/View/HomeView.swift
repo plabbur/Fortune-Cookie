@@ -50,8 +50,9 @@ struct HomeView: View {
                                 .padding(.bottom)
                                 
                                 Button(action: { 
-                                    
-                                    dataModel.newFortune()
+                                    if (dataModel.unstagedFortune == dataModel.currentFortune) {
+                                        dataModel.newFortune()
+                                    }
                                 }) {
                                     RoundedRectangle(cornerRadius: 20)
                                         .frame(width: 160, height: 40)
