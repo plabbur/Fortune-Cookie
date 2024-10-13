@@ -14,45 +14,59 @@ struct OptionsView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                VStack {
-                    ZStack {
-                        Button(action: {self.presentationMode.wrappedValue.dismiss()}) {
-                            Image("Back Arrow Icon")
+            NavigationView {
+                ZStack {
+                    VStack {
+                        ZStack {
+                            Button(action: {self.presentationMode.wrappedValue.dismiss()}) {
+                                Image("Back Arrow Icon")
+                            }
+                            .frame(width: geometry.size.width, alignment: .leading)
+                            .padding(.leading, 80)
+                            
+                            Text("Options")
+                                .font(.system(size: 22, weight: .semibold))
+                                .foregroundColor(Color.offWhite)
+                                .frame(width: geometry.size.width, alignment: .center)
                         }
-                        .frame(width: geometry.size.width, alignment: .leading)
-                        .padding(.leading, 80)
+                        .padding(.vertical)
+                        .padding(.bottom)
                         
-                        Text("Options")
-                            .font(.system(size: 22, weight: .semibold))
-                            .foregroundColor(Color.offWhite)
-                            .frame(width: geometry.size.width, alignment: .center)
+                        MenuOptionView(text: "Premium", icon: "Star Icon", premium: true, width: geometry.size.width - 30)
+                            .onTapGesture {
+                                dataModel.currentOverlay = .PREMIUM
+                            }
+                        
+                        Rectangle()
+                            .fill(.grayButtonBG)
+                            .frame(width: geometry.size.width - 40, height: 0.5)
+                            .padding(.vertical)
+                        
+                        NavigationLink(destination: GeneralSettingsView().navigationBarBackButtonHidden(true)) {
+                            MenuOptionView(text: "General settings", icon: "Options Icon Filled", premium: false, width: geometry.size.width - 30)
+                                .padding(.bottom)
+                        }
+                        MenuOptionView(text: "Retore purchases", icon: "Money Icon", premium: false, width: geometry.size.width - 30)
+                            .padding(.bottom)
+                        
+                        MenuOptionView(text: "Add to home", icon: "Plus Box Icon", premium: false, width: geometry.size.width - 30)
+                            .onTapGesture {
+                                dataModel.currentOverlay = .ADD_TO_HOME
+                            }
+                        
+                        
                     }
-                    .padding(.vertical)
-                    .padding(.bottom)
                     
-                    MenuOptionView(text: "Premium", icon: "Star Icon", premium: true)
-                        .padding(.bottom)
-                        .onTapGesture {
-                            dataModel.currentOverlay = .PREMIUM
-                        }
-                    MenuOptionView(text: "Retore purchases", icon: "Money Icon", premium: false)
-                        .padding(.bottom)
-                    MenuOptionView(text: "Add to home", icon: "Plus Box Icon", premium: false)
-                        .onTapGesture {
-                            dataModel.currentOverlay = .ADD_TO_HOME
-                        }
                 }
-                
-            }
-            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .top)
-            .background(.mainBackground)
-            .overlay {
-                
-                if (dataModel.currentOverlay == .PREMIUM) {
-                    AnyView(PremiumView())
-                } else if (dataModel.currentOverlay == .ADD_TO_HOME) {
-                    AnyView(AddToHomeView())
+                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .top)
+                .background(.mainBackground)
+                .overlay {
+                    
+                    if (dataModel.currentOverlay == .PREMIUM) {
+                        AnyView(PremiumView())
+                    } else if (dataModel.currentOverlay == .ADD_TO_HOME) {
+                        AnyView(AddToHomeView())
+                    }
                 }
             }
             
@@ -66,6 +80,9 @@ struct MenuOptionView: View {
     var text: String
     var icon: String
     var premium: Bool
+    var width: CGFloat
+    var height: CGFloat = 74
+    var showArrow: Bool = true
     
     var gradientBorder: LinearGradient = Constants.premiumGradient
     var regularBorder:  LinearGradient = Constants.menuOptionBorder
@@ -73,11 +90,11 @@ struct MenuOptionView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
             .fill(premium ? gradientBorder : regularBorder)
-            .frame(width: 400, height: 74)
+            .frame(width: width, height: height)
             .overlay {
                 RoundedRectangle(cornerRadius: 19)
                     .fill(.menuOptionFill)
-                    .frame(width: 396, height: 70)
+                    .frame(width: width - 4, height: height - 4)
                     .overlay {
                         HStack {
                             Image(icon)
@@ -88,14 +105,14 @@ struct MenuOptionView: View {
                                 .fontWeight(.semibold)
                             
                             Spacer()
-                            Image("Right Arrow Icon")
-                                .padding(.trailing, 24)
+                            
+                            if showArrow {
+                                Image("Right Arrow Icon")
+                                    .padding(.trailing, 24)
+                            }
                         }
-                        
                     }
             }
-        
-        
     }
 }
 

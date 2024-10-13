@@ -14,7 +14,7 @@ public class WidgetModel: Identifiable, Equatable, Hashable {
     public let id = UUID()
 
     var size: SizeMode
-    var color: Color
+    var color: WidgetColor
     var font: String
     
     enum SizeMode {
@@ -22,15 +22,15 @@ public class WidgetModel: Identifiable, Equatable, Hashable {
         case MEDIUM
     }
     
-    init(size: SizeMode, color: Color, font: String) {
+    init(size: SizeMode, color: WidgetColor, font: String) {
         self.size = size
         self.color = color
         self.font = font
     }
     
-    func getName() -> String {
-        return getSizeAsString().localizedCapitalized + " " + getColorAsHex(color: color).uppercased()
-    }
+//    func getName() -> String {
+//        return getSizeAsString().localizedCapitalized + " " + getColorAsHex(color: color).uppercased()
+//    }
     
     func getFont() -> String {
         return font
@@ -52,7 +52,7 @@ public class WidgetModel: Identifiable, Equatable, Hashable {
         }
     }
     
-    func getColor() -> Color {
+    func getColor() -> WidgetColor {
         return color
     }
     
@@ -78,13 +78,13 @@ public class WidgetModel: Identifiable, Equatable, Hashable {
 //        return Gradient()
 //    }
     
-    func displayWidget(expandable: Bool, staged: Bool) -> WidgetView {
-        return WidgetView(expandable: expandable, staged: staged, size: size, color: color, font: font)
+    func displayWidget(shareable: Bool, expandable: Bool, staged: Bool, overlayOpacity: CGFloat?) -> WidgetView {
+        return WidgetView(shareable: shareable, expandable: expandable, staged: staged, size: size, color: color, font: font, overlayOpacity: overlayOpacity ?? 0.0)
     }
     
-    func displayStagedWidget() -> WidgetView {
-        return dataModel.stagedWidget.displayWidget(expandable: false, staged: false)
-    }
+//    func displayStagedWidget() -> WidgetView {
+//        return dataModel.stagedWidget.displayWidget(shareable: false, expandable: false, staged: false)
+//    }
     
     func editWidget(widget: WidgetModel) {
         self.size = widget.size

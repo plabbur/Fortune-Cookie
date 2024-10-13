@@ -7,13 +7,15 @@
 
 import SwiftUI
 
+
 struct HomeView: View {
     @EnvironmentObject var dataModel: FortuneCookieModel
 
     @State private var actionable: Bool = true
     @State var stagedWidgetScale: CGFloat = 1.0
     @State var stagedWidgetOpacity: CGFloat = 1.0
-
+    @State var overlayOpacity: CGFloat = 0.0
+    
     var body: some View {
         GeometryReader { geometry in
             NavigationView {
@@ -30,7 +32,6 @@ struct HomeView: View {
                                     .frame(width: geometry.size.width, alignment: .trailing)
                                     .padding(.trailing, 80)
                             }
-                            
                         }
                         .padding(.vertical)
                         
@@ -41,9 +42,17 @@ struct HomeView: View {
                                         dataModel.widgetToView = dataModel.stagedWidget
                                         dataModel.currentOverlay = .VIEW_WIDGET
                                     }) {
-                                        dataModel.stagedWidget.displayWidget(expandable: true, staged: true)
+                                        dataModel.stagedWidget.displayWidget(shareable: false, expandable: true, staged: true, overlayOpacity: overlayOpacity)
                                             .scaleEffect(stagedWidgetScale)
                                             .opacity(stagedWidgetOpacity)
+//                                            .overlay {
+//                                                Rectangle()
+//                                                    .fill(dataModel.stagedWidget.getColor().getGradient())
+//                                                    .opacity(overlayOpacity)
+//
+////                                                WidgetView(shareable: true, expandable: false, staged: true, size: dataModel.stagedWidget.getSize(), color: dataModel.stagedWidget.getColor())
+//                                            }
+                                            
                                     }
                                 }
                                 .padding(.top, 30)
@@ -98,7 +107,7 @@ struct HomeView: View {
                                     .padding(.bottom, 5)
                                     .padding(.leading, 35)
                                 
-                                UnstagedWidgetsView(widgetList: dataModel.getWidgets(size: .MEDIUM), stagedWidgetScale: $stagedWidgetScale, stagedWidgetOpacity: $stagedWidgetOpacity)
+                                UnstagedWidgetsView(widgetList: dataModel.getWidgets(size: .MEDIUM), size: .MEDIUM, stagedWidgetScale: $stagedWidgetScale, stagedWidgetOpacity: $stagedWidgetOpacity)
                                 
                                 Text("Small")
                                     .font(.system(size: 18))
@@ -107,7 +116,7 @@ struct HomeView: View {
                                     .padding(.bottom, 5)
                                     .padding(.leading, 35)
                                 
-                                UnstagedWidgetsView(widgetList: dataModel.getWidgets(size: .SMALL), stagedWidgetScale: $stagedWidgetScale, stagedWidgetOpacity: $stagedWidgetOpacity)
+                                UnstagedWidgetsView(widgetList: dataModel.getWidgets(size: .SMALL), size: .SMALL, stagedWidgetScale: $stagedWidgetScale, stagedWidgetOpacity: $stagedWidgetOpacity)
                             }
                         }
                     }
@@ -115,14 +124,22 @@ struct HomeView: View {
                 .background(
                     LinearGradient(
                         stops: [
-                            Gradient.Stop(color: Color(red: 0.15, green: 0.13, blue: 0.24), location: 0.00),
+                            Gradient.Stop(color: dataModel.stagedWidget.getColor().getStart(), location: 0.00),
                             Gradient.Stop(color: Color(red: 0.07, green: 0.07, blue: 0.07), location: 0.25),
                         ],
                         startPoint: UnitPoint(x: 0.5, y: 0),
                         endPoint: UnitPoint(x: 0.5, y: 1)
                     )
-                    
                 )
+                .overlay {
+                    Rectangle()
+                        .frame(width: geometry.size.width, height: geometry.size.height + 400)
+                        .ignoresSafeArea()
+                        .opacity(dataModel.currentOverlay == .NONE ? 0.0 : 0.3)
+                }
+                .onTapGesture {
+                    dataModel.currentOverlay = .NONE
+                }
             }
             .overlay {
                 if (dataModel.currentOverlay == .ADD_TO_HOME) {
@@ -142,6 +159,7 @@ struct HomeView: View {
 struct UnstagedWidgetsView: View {
     @EnvironmentObject var dataModel: FortuneCookieModel
     var widgetList: [WidgetModel]
+    var size: WidgetModel.SizeMode
     
     @Binding var stagedWidgetScale: CGFloat
     @Binding var stagedWidgetOpacity: CGFloat
@@ -149,9 +167,10 @@ struct UnstagedWidgetsView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             ScrollViewReader { scrollView in
+                
                 HStack(spacing: 20) {
                     ForEach(widgetList, id: \.self) { widget in
-                        widget.displayWidget(expandable: false, staged: false)
+                        widget.displayWidget(shareable: false, expandable: false, staged: false, overlayOpacity: 0.0)
                             .padding(.leading, widget == widgetList[0] ? 37 : 0)
                             .padding(.trailing, widget == widgetList[widgetList.count - 1] ? 37 : 0)
                             .id(widgetList.firstIndex(of: widget))
@@ -175,8 +194,12 @@ struct UnstagedWidgetsView: View {
                                 dataModel.widgetToView = widget
                                 dataModel.currentOverlay = .VIEW_WIDGET
                             })
-                            
                     }
+                    
+                    AddWidgetUnstagedView(size: size)
+                        .padding(.leading, -35)
+
+                    
                 }
                 .onChange(of: dataModel.stagedWidget) {
                     withAnimation {

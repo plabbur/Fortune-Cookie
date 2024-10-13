@@ -32,7 +32,7 @@ struct Choice: Codable {
 
 class FortuneCookieModel: ObservableObject {
 
-    @Published var widgetToView: WidgetModel = WidgetModel(size: WidgetModel.SizeMode.MEDIUM, color: .darkBlue, font: "New York Times")
+    @Published var widgetToView: WidgetModel = WidgetModel(size: WidgetModel.SizeMode.MEDIUM, color: Constants.originalColors[2], font: "New York Times")
     
     @Published var stagedWidget: WidgetModel
     @Published var allWidgets: [WidgetModel]
@@ -43,9 +43,10 @@ class FortuneCookieModel: ObservableObject {
     @Published var currentFortune: String = "Fortune will soon find you, just wait"
     var nextFortune: String = "Your dreams are closer than you think."
     @Published var unstagedFortune: String = "Fortune will soon find you, just wait"
-    
 
     let sharedDefaults = UserDefaults(suiteName: "group.com.coleabrams.Fortune-Cookie")
+    
+    @AppStorage("ShakeToReveal") var shakeToReveal: Bool = true
     
     enum Overlay {
         case VIEW_WIDGET
@@ -59,13 +60,13 @@ class FortuneCookieModel: ObservableObject {
     
     init() {
         let initialWidgets = [
-                WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.darkBlue, font: "Times New Roman"),
-                WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.yellow, font: "Helvetica"),
-                WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.red, font: "Times New Roman"),
-                WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Color.gray, font: "Georgia"),
-                WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Color.black, font: "Times New Roman"),
-                WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Color.green, font: "Georgia"),
-                WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Color.lightPink, font: "Helvetica")
+            WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Constants.originalColors[1], font: "Times New Roman"),
+                WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Constants.originalColors[2], font: "Helvetica"),
+                WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Constants.originalColors[3], font: "Times New Roman"),
+                WidgetModel.init(size: WidgetModel.SizeMode.MEDIUM, color: Constants.originalColors[4], font: "Georgia"),
+                WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Constants.originalColors[5], font: "Times New Roman"),
+                WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Constants.originalColors[6], font: "Georgia"),
+                WidgetModel.init(size: WidgetModel.SizeMode.SMALL, color: Constants.originalColors[7], font: "Helvetica")
             ]
         
         self.allWidgets = initialWidgets
@@ -132,8 +133,6 @@ class FortuneCookieModel: ObservableObject {
                 }
             }
         }
-        
-
     }
     
     func getNextFortune() -> String {
@@ -158,11 +157,13 @@ class FortuneCookieModel: ObservableObject {
     
     func newFortune() {
 
-        self.typeFortune(fortune: getNextFortune()) {
-            self.setUnstagedFortune()
+        if self.shakeToReveal {
+            self.setFortune(fortune: self.getFortune())
+        } else {
+            self.typeFortune(fortune: getNextFortune()) {
+                self.fortunesUsed.append(self.currentFortune)
+            }
         }
-        fortunesUsed.append(currentFortune)
-        
         
         let prompt: String = "Generate a fortune cookie fortune that is less than 10 words and is not similar to these (don't add exclamation marks): " + fortunesUsed.map { "'\($0)'" }.joined(separator: ", ")
         
@@ -241,17 +242,31 @@ class FortuneCookieModel: ObservableObject {
     }
     
     func updateDefaults() {
+        
+        var widgetSizes: [String] = [String]()
+        var widgetColors: [LinearGradient] = [LinearGradient]()
+        var widgetFonts: [String] = [String]()
+        
+        for widget in allWidgets {
+            widgetSizes.append(widget.getSizeAsString())
+            widgetColors.append(widget.getColor().getGradient())
+            widgetFonts.append(widget.getFont())
+        }
+        
         let sharedDefaults = UserDefaults(suiteName: "group.com.coleabrams.Fortune-Cookie")
         
-        if let colorData = try? NSKeyedArchiver.archivedData(withRootObject: UIColor(stagedWidget.color), requiringSecureCoding: false) {
+        if let colorData = try? NSKeyedArchiver.archivedData(withRootObject: stagedWidget.getColor().getGradient(), requiringSecureCoding: false) {
             sharedDefaults?.set(colorData, forKey: "WidgetColor")
         }
         
         sharedDefaults?.set(self.currentFortune, forKey: "WidgetFortune")
-        print("Saved Fortune: \(self.currentFortune)")
-        
         sharedDefaults?.set(stagedWidget.getFont(), forKey: "WidgetFont")
         sharedDefaults?.set(stagedWidget.getSizeAsString(), forKey: "WidgetSize")
+
+//        sharedDefaults?.set(widgetSizes, forKey: "AllWidgetSizes")
+//        sharedDefaults?.set(widgetColors, forKey: "AllWidgetColors")
+//        sharedDefaults?.set(widgetFonts, forKey: "AllWidgetFonts")
+//        sharedDefaults?.set(self.allWidgets, forKey: "AllWidgets")
         
         WidgetCenter.shared.reloadTimelines(ofKind: "Fortune_Cookie_Widget")
     }

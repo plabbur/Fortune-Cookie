@@ -6,10 +6,9 @@
 //
 
 import SwiftUI
-
 struct ViewWidgetView: View {
     @EnvironmentObject var dataModel: FortuneCookieModel
-    var widget: WidgetModel = WidgetModel(size: WidgetModel.SizeMode.MEDIUM, color: .darkBlue, font: "Times New Roman")
+    var widget: WidgetModel
     
     var body: some View {
         OverlayTemplateView(content: ViewWidgetContentView(widget: widget), overlay: FortuneCookieModel.Overlay.VIEW_WIDGET, height: 690, title: "View widget", customHeader: false)
@@ -30,7 +29,7 @@ struct ViewWidgetContentView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                dataModel.widgetToView.displayWidget(expandable: false, staged: true)
+                dataModel.widgetToView.displayWidget(shareable: true, expandable: false, staged: true, overlayOpacity: 0.0)
                 
                 HStack {
                     
@@ -86,6 +85,6 @@ struct ViewWidgetContentView: View {
 
 
 #Preview {
-    ViewWidgetView()
+    ViewWidgetView(widget: WidgetModel(size: WidgetModel.SizeMode.MEDIUM, color: Constants.originalColors[2], font: "Times New Roman"))
         .environmentObject(FortuneCookieModel())
 }

@@ -10,8 +10,7 @@ import SwiftUI
 struct CreateWidgetView: View {
     @EnvironmentObject var dataModel: FortuneCookieModel
     @State var selectedSize: WidgetModel.SizeMode = .MEDIUM
-    @State var selectedColor: Color = .darkBlue
-    @State var selectedGradient: LinearGradient = Constants.darkBlueGradient
+    @State var selectedColor: WidgetColor = Constants.originalColors[2]
     @State var selectedFont: String = "Times New Roman"
     
     @State private var opacityVal: Double = 100
@@ -22,7 +21,7 @@ struct CreateWidgetView: View {
     var body: some View {
         GeometryReader { geometry in
             
-            OverlayTemplateView(content: CreateWidgetContentView(selectedSize: $selectedSize, selectedColor: $selectedColor, selectedGradient: $selectedGradient, selectedFont: $selectedFont), overlay: FortuneCookieModel.Overlay.CREATE_WIDGET, height: 690, title: "Create widget", customHeader: false)
+            OverlayTemplateView(content: CreateWidgetContentView(selectedSize: $selectedSize, selectedColor: $selectedColor, selectedFont: $selectedFont), overlay: FortuneCookieModel.Overlay.CREATE_WIDGET, height: 690, title: "Create widget", customHeader: false)
         }
     }
 }
@@ -38,8 +37,7 @@ struct CreateWidgetContentView: View {
 
     
     @Binding var selectedSize: WidgetModel.SizeMode
-    @Binding var selectedColor: Color
-    @Binding var selectedGradient: LinearGradient
+    @Binding var selectedColor: WidgetColor
     @Binding var selectedFont: String
     
     @State var chooseFont: Bool = false
@@ -49,55 +47,61 @@ struct CreateWidgetContentView: View {
         GeometryReader { geometry in
 
             VStack {
-                WidgetView(expandable: false, staged: true, size: selectedSize, color: selectedColor, font: selectedFont)
-                    .padding(.bottom, 25)
-                
                 HStack {
-                    Text("Size")
-                        .padding(.leading, 43)
-                        .foregroundColor(.subtextGray)
-                        .font(.system(size: 18))
-                        .fontWeight(.medium)
+                    WidgetView(shareable: false, expandable: false, staged: true, size: .MEDIUM, color: selectedColor, font: selectedFont)
+                        .padding(.bottom, 25)
                     
-                    Spacer()
-                    
-                    RoundedRectangle(cornerRadius: 30)
-                        .fill(.grayButtonBG)
-                        .frame(width: 194, height: 44)
-                        .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 30)
-                                .fill(.mainGray)
-                                .frame(width: 100, height: 42)
-                                .frame(width: 192, alignment: selectedSize == .SMALL ? .leading : .trailing)
-                                .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 0)
-                        }
-                        .overlay {
-                            ZStack {
-                                Text("Small")
-                                    .font(.system(size: 16))
-                                    .foregroundColor(selectedSize == .SMALL ? .offWhite : .textGray)
-                                    .frame(width: 100, height: 42)
-                                    .frame(width: 192, alignment: .leading)
-                                    .onTapGesture {
-                                        selectedSize = .SMALL
-                                    }
-                                
-                                Text("Medium")
-                                    .font(.system(size: 16))
-                                    .foregroundColor(selectedSize == .MEDIUM ? .offWhite : .textGray)
-                                    .frame(width: 100, height: 42)
-                                    .frame(width: 192, alignment: .trailing)
-                                    .onTapGesture {
-                                        selectedSize = .MEDIUM
-                                    }
-                            }
-                            .frame(width: 194)
-                        }
-                        .padding(.trailing, 38)
-                    
+                    WidgetView(shareable: false, expandable: false, staged: true, size: .SMALL, color: selectedColor, font: selectedFont)
+                        .padding(.bottom, 25)
                 }
-                .padding(.bottom, 10)
+                
+                
+//                HStack {
+//                    Text("Size")
+//                        .padding(.leading, 43)
+//                        .foregroundColor(.subtextGray)
+//                        .font(.system(size: 18))
+//                        .fontWeight(.medium)
+//                    
+////                    Spacer()
+//                    
+////                    RoundedRectangle(cornerRadius: 30)
+////                        .fill(.grayButtonBG)
+////                        .frame(width: 194, height: 44)
+////                        .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
+////                        .overlay {
+////                            RoundedRectangle(cornerRadius: 30)
+////                                .fill(.mainGray)
+////                                .frame(width: 100, height: 42)
+////                                .frame(width: 192, alignment: selectedSize == .SMALL ? .leading : .trailing)
+////                                .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 0)
+////                        }
+////                        .overlay {
+////                            ZStack {
+////                                Text("Small")
+////                                    .font(.system(size: 16))
+////                                    .foregroundColor(selectedSize == .SMALL ? .offWhite : .textGray)
+////                                    .frame(width: 100, height: 42)
+////                                    .frame(width: 192, alignment: .leading)
+////                                    .onTapGesture {
+////                                        selectedSize = .SMALL
+////                                    }
+////                                
+////                                Text("Medium")
+////                                    .font(.system(size: 16))
+////                                    .foregroundColor(selectedSize == .MEDIUM ? .offWhite : .textGray)
+////                                    .frame(width: 100, height: 42)
+////                                    .frame(width: 192, alignment: .trailing)
+////                                    .onTapGesture {
+////                                        selectedSize = .MEDIUM
+////                                    }
+////                            }
+////                            .frame(width: 194)
+////                        }
+////                        .padding(.trailing, 38)
+//                    
+//                }
+//                .padding(.bottom, 10)
                 
                 
                 HStack {
@@ -154,16 +158,16 @@ struct CreateWidgetContentView: View {
                     Spacer()
                     
                     Circle()
-                        .fill(selectedGradient)
+                        .fill(selectedColor.getGradient())
                         .frame(width: 44, height: 44)
                         .padding(.trailing, 38)
                         .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 1)
-                        .overlay {
-                            Circle()
-                                .frame(width: 37, height: 37)
-                                .foregroundColor(selectedColor)
-                                .padding(.trailing, 38)
-                        }
+//                        .overlay {
+//                            Circle()
+//                                .frame(width: 37, height: 37)
+//                                .foregroundColor(selectedColor)
+//                                .padding(.trailing, 38)
+//                        }
                 }
                 .padding(.bottom, 50)
                 

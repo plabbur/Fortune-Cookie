@@ -11,7 +11,10 @@ struct OverlayTemplateView: View {
     @EnvironmentObject var dataModel: FortuneCookieModel
     
     @State var yOffset: Double = 900
+    @State private var isDragging = false
     @State var opacityOffset: Double = 0
+    @State private var dragVelocity: CGFloat = 0.0
+
     
     var content: any View
     var overlayMode: FortuneCookieModel.Overlay
@@ -38,19 +41,25 @@ struct OverlayTemplateView: View {
                         
                         if (!(customHeader ?? true)) {
 
-                            ZStack {
+                            HStack {
+                                
+                                Spacer()
                                 
                                 if (overlayMode == .PREMIUM) {
                                     Text(self.title)
                                         .gradientForeground(gradient: Constants.premiumGradient)
                                         .font(.system(size: 28))
                                         .fontWeight(.semibold)
+                                        .padding(.leading, 50)
                                 } else {
                                     Text(self.title)
                                         .foregroundColor(.offWhite)
                                         .font(.system(size: 20))
                                         .fontWeight(.semibold)
+                                        .padding(.leading, 50)
                                 }
+                                
+                                Spacer()
                                 
                                 Button(action: {
                                     DispatchQueue.main.asyncAfter(deadline: .now()) {
@@ -72,9 +81,11 @@ struct OverlayTemplateView: View {
                                 }) {
                                     
                                     Image("Exit Icon")
-                                        .frame(width: geometry.size.width - 80, alignment: .trailing)
                                 }
+                                .padding(.trailing, 30)
+
                             }
+                            .frame(width: geometry.size.width, alignment: .leading)
                             .padding(.bottom, 30)
 
                         
@@ -93,8 +104,8 @@ struct OverlayTemplateView: View {
                 .background(
                     LinearGradient(
                         gradient: Gradient(colors: [
-                            .black.opacity(overlayMode != .EDIT_WIDGET ? opacityOffset : 0.0),
-                            .black.opacity(overlayMode != .EDIT_WIDGET ? opacityOffset : 0.0)
+                            .black.opacity(0.0),
+                            .black.opacity(0.0)
                         ]),
                         startPoint: .leading,
                         endPoint: .trailing
@@ -109,11 +120,9 @@ struct OverlayTemplateView: View {
                         }
                     }
                 )
-                
                 .ignoresSafeArea()
                 .position(x: geometry.size.width / 2, y: CGFloat(yOffset))
                 .onAppear {
-                    
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
                         withAnimation(.easeInOut(duration: overlayMode == .EDIT_WIDGET ? 0.0 : 0.1)) {
                             yOffset = 451
@@ -122,30 +131,32 @@ struct OverlayTemplateView: View {
                             opacityOffset = 0.4
                         }
                     }
-                    
-                    
                 }
                 .gesture(
-                DragGesture()
-                    .onEnded({ value in
-                        if value.translation.height > 10 {
-                            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                                withAnimation(.easeInOut(duration: 0.2)) {
-                                    yOffset = 1000
-                                    
-                                }
-                                withAnimation(.easeIn(duration: 0.2)) {
-                                    opacityOffset = 0.4
-                                }
-                                
-                            }
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                dataModel.currentOverlay = .NONE
+                    
+                    DragGesture()
+                        .onChanged { value in
+                            if value.translation.height > 0 && dataModel.currentOverlay != .EDIT_WIDGET {
+                                isDragging = true
+                                yOffset = 451 + value.translation.height
                             }
                         }
-                    })
+                        .onEnded { value in
+                            print(value.velocity)
+                            if value.velocity.height < 30 {
+                                isDragging = false
+                                withAnimation(.spring()) {
+                                    yOffset = 451
+                                }
+                            } else {
+                                withAnimation(.easeInOut(duration: 0.2)) {
+                                    yOffset = 1000
+                                    dataModel.currentOverlay = .NONE
+                                }
+                            }
+                        }
                 )
+                .animation(.spring(), value: isDragging)
         }
     }
 }

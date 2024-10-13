@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E51A2C1F2C8673CB0045CBFF /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A2C1E2C8673CB0045CBFF /* GeneralSettingsView.swift */; };
+		E51A2C212C87A2BC0045CBFF /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51A2C202C87A2BC0045CBFF /* ColorView.swift */; };
 		E530FA5A2C796C6500FB784B /* WidgetConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530FA582C796B2600FB784B /* WidgetConstants.swift */; };
+		E530FA5C2C7C16DD00FB784B /* WidgetColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530FA5B2C7C16DD00FB784B /* WidgetColor.swift */; };
 		E5AEB8922C76BCE20097EFF9 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8862C76BCE10097EFF9 /* WidgetView.swift */; };
 		E5AEB8932C76BCE20097EFF9 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8872C76BCE10097EFF9 /* OptionsView.swift */; };
 		E5AEB8942C76BCE20097EFF9 /* CreateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8882C76BCE10097EFF9 /* CreateWidgetView.swift */; };
@@ -29,6 +32,8 @@
 		E5AEB8F62C76DC210097EFF9 /* Fortune_Cookie_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AEB8F52C76DC210097EFF9 /* Fortune_Cookie_Widget.swift */; };
 		E5AEB8F82C76DC220097EFF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5AEB8F72C76DC220097EFF9 /* Assets.xcassets */; };
 		E5AEB8FC2C76DC220097EFF9 /* Fortune Cookie WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E5AEB8EF2C76DC210097EFF9 /* Fortune Cookie WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E5B93F862C80D24500DC7FCA /* AddWidgetUnstagedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B93F852C80D24400DC7FCA /* AddWidgetUnstagedView.swift */; };
+		E5B93F892C80DA3F00DC7FCA /* WidgetModelWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B93F872C80D8D400DC7FCA /* WidgetModelWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +61,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E51A2C1E2C8673CB0045CBFF /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		E51A2C202C87A2BC0045CBFF /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		E521FBC52C5C2F3600A4472E /* Fortune Cookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fortune Cookie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E530FA562C795D0200FB784B /* Fortune CookieDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fortune CookieDebug.entitlements"; sourceTree = "<group>"; };
 		E530FA572C795D9300FB784B /* Fortune Cookie WidgetExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fortune Cookie WidgetExtensionDebug.entitlements"; sourceTree = "<group>"; };
 		E530FA582C796B2600FB784B /* WidgetConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetConstants.swift; sourceTree = "<group>"; };
+		E530FA5B2C7C16DD00FB784B /* WidgetColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetColor.swift; sourceTree = "<group>"; };
 		E5AEB87F2C76BB130097EFF9 /* FortuneCookieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneCookieModel.swift; sourceTree = "<group>"; };
 		E5AEB8802C76BB130097EFF9 /* WidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetModel.swift; sourceTree = "<group>"; };
 		E5AEB8812C76BB130097EFF9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -83,6 +91,8 @@
 		E5AEB8F52C76DC210097EFF9 /* Fortune_Cookie_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortune_Cookie_Widget.swift; sourceTree = "<group>"; };
 		E5AEB8F72C76DC220097EFF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5AEB8F92C76DC220097EFF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5B93F852C80D24400DC7FCA /* AddWidgetUnstagedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWidgetUnstagedView.swift; sourceTree = "<group>"; };
+		E5B93F872C80D8D400DC7FCA /* WidgetModelWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetModelWidget.swift; sourceTree = "<group>"; };
 		E5F4267C2C756F4E00F2CA51 /* Fortune-Cookie-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fortune-Cookie-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -131,8 +141,8 @@
 			children = (
 				E530FA562C795D0200FB784B /* Fortune CookieDebug.entitlements */,
 				E5F4267C2C756F4E00F2CA51 /* Fortune-Cookie-Info.plist */,
-				E5AEB8822C76BB290097EFF9 /* View */,
 				E5AEB87E2C76BB130097EFF9 /* Model */,
+				E5AEB8822C76BB290097EFF9 /* View */,
 				E5AEB89E2C76BD160097EFF9 /* Fortune_CookieApp.swift */,
 				E5AEB8A72C76C11A0097EFF9 /* Assets.xcassets */,
 			);
@@ -145,6 +155,7 @@
 				E5AEB87F2C76BB130097EFF9 /* FortuneCookieModel.swift */,
 				E5AEB8802C76BB130097EFF9 /* WidgetModel.swift */,
 				E5AEB8812C76BB130097EFF9 /* Constants.swift */,
+				E530FA5B2C7C16DD00FB784B /* WidgetColor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,11 +168,14 @@
 				E5AEB88A2C76BCE10097EFF9 /* EditWidgetView.swift */,
 				E5AEB88E2C76BCE10097EFF9 /* HomeView.swift */,
 				E5AEB8872C76BCE10097EFF9 /* OptionsView.swift */,
+				E51A2C1E2C8673CB0045CBFF /* GeneralSettingsView.swift */,
 				E5AEB88C2C76BCE10097EFF9 /* OverlayTemplateView.swift */,
 				E5AEB8892C76BCE10097EFF9 /* PremiumView.swift */,
 				E5AEB88F2C76BCE10097EFF9 /* SimpleButtonView.swift */,
 				E5AEB8912C76BCE20097EFF9 /* ViewWidgetView.swift */,
 				E5AEB8862C76BCE10097EFF9 /* WidgetView.swift */,
+				E5B93F852C80D24400DC7FCA /* AddWidgetUnstagedView.swift */,
+				E51A2C202C87A2BC0045CBFF /* ColorView.swift */,
 				E5AEB8852C76BCE10097EFF9 /* Fortune Cookie-Bridging-Header.h */,
 			);
 			path = View;
@@ -179,6 +193,7 @@
 		E5AEB8F22C76DC210097EFF9 /* Fortune Cookie Widget */ = {
 			isa = PBXGroup;
 			children = (
+				E5B93F872C80D8D400DC7FCA /* WidgetModelWidget.swift */,
 				E530FA582C796B2600FB784B /* WidgetConstants.swift */,
 				E5AEB8F32C76DC210097EFF9 /* Fortune_Cookie_WidgetBundle.swift */,
 				E5AEB8F52C76DC210097EFF9 /* Fortune_Cookie_Widget.swift */,
@@ -295,8 +310,12 @@
 				E5AEB8922C76BCE20097EFF9 /* WidgetView.swift in Sources */,
 				E5AEB8932C76BCE20097EFF9 /* OptionsView.swift in Sources */,
 				E5AEB8A02C76BE110097EFF9 /* AddToHomeView.swift in Sources */,
+				E51A2C212C87A2BC0045CBFF /* ColorView.swift in Sources */,
 				E5AEB8A52C76BFF20097EFF9 /* Constants.swift in Sources */,
 				E5AEB89D2C76BCE20097EFF9 /* ViewWidgetView.swift in Sources */,
+				E530FA5C2C7C16DD00FB784B /* WidgetColor.swift in Sources */,
+				E5B93F862C80D24500DC7FCA /* AddWidgetUnstagedView.swift in Sources */,
+				E51A2C1F2C8673CB0045CBFF /* GeneralSettingsView.swift in Sources */,
 				E5AEB8982C76BCE20097EFF9 /* OverlayTemplateView.swift in Sources */,
 				E5AEB8952C76BCE20097EFF9 /* PremiumView.swift in Sources */,
 				E5AEB8962C76BCE20097EFF9 /* EditWidgetView.swift in Sources */,
@@ -313,6 +332,7 @@
 				E530FA5A2C796C6500FB784B /* WidgetConstants.swift in Sources */,
 				E5AEB8F42C76DC210097EFF9 /* Fortune_Cookie_WidgetBundle.swift in Sources */,
 				E5AEB8F62C76DC210097EFF9 /* Fortune_Cookie_Widget.swift in Sources */,
+				E5B93F892C80DA3F00DC7FCA /* WidgetModelWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

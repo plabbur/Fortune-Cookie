@@ -26,8 +26,7 @@ struct EditWidgetContentView: View {
     
     @EnvironmentObject var dataModel: FortuneCookieModel
     @State var selectedSize: WidgetModel.SizeMode
-    @State var selectedColor: Color
-    @State var selectedGradient: LinearGradient = Constants.darkBlueGradient
+    @State var selectedColor: WidgetColor
     @State var selectedFont: String
     
     @State var showWidgetError: Bool = false
@@ -87,7 +86,7 @@ struct EditWidgetContentView: View {
 
 
                 
-                WidgetView(expandable: false, staged: true, size: selectedSize, color: selectedColor, font: selectedFont)
+                WidgetView(shareable: false, expandable: false, staged: true, size: selectedSize, color: selectedColor, font: selectedFont)
                     .padding(.bottom, 25)
                 
                 HStack {
@@ -178,16 +177,16 @@ struct EditWidgetContentView: View {
                     Spacer()
                     
                     Circle()
-                        .fill(selectedGradient)
+                        .fill(selectedColor.getGradient())
                         .frame(width: 44, height: 44)
                         .padding(.trailing, 38)
                         .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 1)
-                        .overlay {
-                            Circle()
-                                .frame(width: 37, height: 37)
-                                .foregroundColor(selectedColor)
-                                .padding(.trailing, 38)
-                        }
+//                        .overlay {
+//                            Circle()
+//                                .frame(width: 37, height: 37)
+//                                .foregroundColor(selectedColor)
+//                                .padding(.trailing, 38)
+//                        }
                 }
                 .padding(.bottom, 50)
 
@@ -281,37 +280,36 @@ struct EditWidgetContentView: View {
         }
     }
 }
-
-struct saveButtonView: View {
-    @EnvironmentObject var dataModel: FortuneCookieModel
-    
-    @State var selectedSize: WidgetModel.SizeMode
-    @State var selectedColor: Color
-    @State var selectedGradient: LinearGradient = Constants.darkBlueGradient
-    @State var selectedFont: String
-    
-    @State var showWidgetError: Bool = false
-    
-    var widget: WidgetModel
-
-    
-    var body: some View {
-        Button(action: {
-            if (dataModel.widgetExists(widget: WidgetModel(size: selectedSize, color: selectedColor, font: selectedFont))) {
-                showWidgetError = true
-            } else {
-                widget.editWidget(widget: WidgetModel(size: selectedSize, color: selectedColor, font: selectedFont))
-//                dataModel.editWidget = false
-            }
-        }) {
-            Text("Save")
-                .fontWeight(.bold)
-                .foregroundColor(.saveYellow)
-        }
-    }
-}
+//
+//struct saveButtonView: View {
+//    @EnvironmentObject var dataModel: FortuneCookieModel
+//    
+//    @State var selectedSize: WidgetModel.SizeMode
+//    @State var selectedColor: WidgetColor
+//    @State var selectedFont: String
+//    
+//    @State var showWidgetError: Bool = false
+//    
+//    var widget: WidgetModel
+//
+//    
+//    var body: some View {
+//        Button(action: {
+//            if (dataModel.widgetExists(widget: WidgetModel(size: selectedSize, color: selectedColor, font: selectedFont))) {
+//                showWidgetError = true
+//            } else {
+//                widget.editWidget(widget: WidgetModel(size: selectedSize, color: selectedColor, font: selectedFont))
+////                dataModel.editWidget = false
+//            }
+//        }) {
+//            Text("Save")
+//                .fontWeight(.bold)
+//                .foregroundColor(.saveYellow)
+//        }
+//    }
+//}
 
 #Preview {
-    EditWidgetView(widget: WidgetModel(size: WidgetModel.SizeMode.MEDIUM, color: .darkBlue, font: "New York Times"))
+    EditWidgetView(widget: WidgetModel(size: WidgetModel.SizeMode.MEDIUM, color: Constants.originalColors[2], font: "New York Times"))
         .environmentObject(FortuneCookieModel())
 }

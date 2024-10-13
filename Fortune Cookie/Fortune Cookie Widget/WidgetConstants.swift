@@ -9,14 +9,9 @@ import Foundation
 import SwiftUI
 
 struct WidgetConstants {
-    static let darkBlueGradient: LinearGradient = LinearGradient(
-        stops: [
-            Gradient.Stop(color: Color(red: 0.847, green: 0.82, blue: 1.0), location: 0.00),
-            Gradient.Stop(color: Color(red: 0.776, green: 0.741, blue: 1.0), location: 0.33),
-            Gradient.Stop(color: Color(red: 0.42, green: 0.373, blue: 0.69), location: 0.66),
-            Gradient.Stop(color: Color(red: 0.71, green: 0.686, blue: 0.847), location: 0.99)
-        ],
-        startPoint: UnitPoint(x: 0, y: 0),
-        endPoint: UnitPoint(x: 1, y: 1)
-    )
+    static let darkBlueGradient = LinearGradient(stops: [Gradient.Stop(color: .darkBlueGradientStart, location: 0.00), Gradient.Stop(color: .darkBlueGradientEnd, location: 1.0)], startPoint: UnitPoint(x: 0, y: 0), endPoint: UnitPoint(x: 1, y: 1))
+    
+    static let defaultWidgetModelMedium = WidgetModelWidget(size: "medium", color: darkBlueGradient, font: "Times New Roman")
+    static let defaultWidgetModelSmall = WidgetModelWidget(size: "small", color: darkBlueGradient, font: "Inter")
+
 }
